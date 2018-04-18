@@ -21,7 +21,35 @@ Meal.add({
 	public: {
 		type: Boolean,
 		initial: true
-	} /* would make the meal publicly searchable by other users */
+	} /* would make the meal publicly searchable by other users */,
+	test: {
+		type: String,
+		initial: true
+	}
+});
+
+Meal.relationship({
+	path: "injections",
+	ref: "Injection",
+	refPath: "meal"
+});
+
+Meal.relationship({
+	path: "exercises",
+	ref: "Exercise",
+	refPath: "meal"
+});
+
+Meal.relationship({
+	path: "measurements",
+	ref: "Measurement",
+	refPath: "meal"
+});
+
+Meal.relationship({
+	path: "snacks",
+	ref: "Snack",
+	refPath: "meal"
 });
 
 Meal.defaultColumns = "title";

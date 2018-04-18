@@ -3,5 +3,11 @@ extends ../layouts/default
 block content
 	.container
 		h1 Meals!
-		p !{JSON.stringify(meals)}
+		ul
+			each meal in meals
+				li
+					p #{meal.title}
+					p #{meal.datetime}
+					p #{meal.user}
+					p !{JSON.stringify(meal)}
 
