@@ -12,6 +12,15 @@ var Meal = new keystone.List("Meal");
 Meal.add({
 	title: { type: String, required: true, index: true, initial: true },
 	carbs: { type: Number, initial: true },
+	carbconfidence: {
+		type: Types.Select,
+		options: [
+			{ value: 0.1, label: "Total guess" },
+			{ value: 0.5, label: "fairly sure" },
+			{ value: 1, label: "I measured it" }
+		],
+		initial: true
+	},
 	datetime: { type: Types.Datetime, default: Date.now, initial: true },
 	user: {
 		type: Types.Relationship,
