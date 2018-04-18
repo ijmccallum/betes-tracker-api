@@ -6,8 +6,8 @@ This is essentially a prototype. So keep it mini!
 
 ## TODOs
 
-* check if meals added are automatically linked to the current user
-* enter some meal data
+* [x] check if meals added are automatically linked to the current user (doesn't look like it)
+* [x] enter some meal data
 * set up a search page - a new auth page (in the admin?)
   * search by text
   * filter by exercise
