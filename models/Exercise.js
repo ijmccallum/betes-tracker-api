@@ -9,6 +9,7 @@ var Exercise = new keystone.List("Exercise");
 
 Exercise.add({
 	title: { type: String, required: true, index: true, initial: true },
+	start: { type: Types.Datetime, default: Date.now, initial: true },
 	duration: { type: Number, initial: true },
 	intensity: { type: Number, initial: true },
 	meal: { type: Types.Relationship, ref: "Meal", initial: true }

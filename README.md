@@ -4,10 +4,16 @@ Keystone!
 
 This is essentially a prototype. So keep it mini!
 
+## Running
+
+* docker compose file runs a container with the DB, so start that first. (cd ~/Projects/betes-tracker-api)
+* npm start spins up a node server locally (on the host machine) that talks to the docker db container.
+
 ## TODOs
 
 * [x] check if meals added are automatically linked to the current user (doesn't look like it)
 * [x] enter some meal data
+* [ ] when relating different types of data together (eg linking an injection to a meal, show the item's tile instead of the ID)
 * set up a search page - a new auth page (in the admin?)
   * search by text
   * filter by exercise

@@ -4,7 +4,9 @@
 var keystone = require("keystone");
 var Types = keystone.Field.Types;
 
-var Injection = new keystone.List("Injection");
+var Injection = new keystone.List("Injection", {
+	drilldown: "meal"
+});
 
 Injection.add({
 	datetime: { type: Types.Datetime, default: Date.now, initial: true },
