@@ -28,7 +28,8 @@ keystone.pre("render", middleware.flashMessages);
 
 // Import Route Controllers
 var routes = {
-	views: importRoutes("./views")
+	views: importRoutes("./views"),
+	api: importRoutes("./api")
 };
 
 // Setup Route Bindings
@@ -37,6 +38,12 @@ exports = module.exports = function(app) {
 	app.get("/", routes.views.index);
 	// app.get("/meals", middleware.requireUser, routes.views.meals);
 	app.get("/meals", routes.views.meals);
+
+	app.get("/api/meals", routes.api.meals.list);
+	app.get("/api/meals/:id", routes.api.meals.get);
+	app.post("/api/meals", routes.api.meals.create);
+	app.put("/api/meals/:id", routes.api.meals.update);
+	app.delete("/api/meals/:id", routes.api.meals.remove);
 
 	// NOTE: To protect a route so that only admins can see it, use the requireUser middleware:
 	// app.get('/protected', middleware.requireUser, routes.views.protected);
